@@ -15,8 +15,8 @@ export class GetConfirmComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onClose(){
-    this._matdialougref.close()
+  onClose(flag:boolean){
+    this._matdialougref.close(flag)
   }
 
 }

@@ -9,6 +9,8 @@ import {MatIconModule} from '@angular/material/icon';
 import { StudentComponent } from './student/student.component';
 import { GetConfirmComponent } from './get-confirm/get-confirm.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     BrowserAnimationsModule,
     MatButtonModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

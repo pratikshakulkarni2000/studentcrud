@@ -28,13 +28,13 @@
                 </div>
                 <button (click)="onStdAdd()" *ngIf="!isInEditMode" class="btn-block" mat-raised-button
                     color="primary">Add Student</button>
-                <button *ngIf="isInEditMode" class="btn-block" mat-raised-button color="accent">Update Student</button>
+                <button (click)="onUpdate()" *ngIf="isInEditMode" class="btn-block" mat-raised-button color="accent">Update Student</button>
             </div>
         </div>
 
         <div class="col-md-7">
             <div class="table-responsive">
-                <table class="table table-bordered mt-3">
+                <table *ngIf="stdArr.length > 0; else noStd" class="table table-bordered mt-3">
                     <thead>
                         <tr>
                             <th>Sr No.</th>
@@ -53,12 +53,12 @@
                             <td>{{std.email}}</td>
                             <td>{{std.contact}}</td>
                             <td>
-                                <button mat-mini-fab color="primary">
+                                <button  (click)="onEdit(std)" mat-mini-fab color="primary">
                                     <mat-icon>edit</mat-icon>
                                 </button>
                             </td>
                             <td>
-                                <button (click)="onRemove(std.stdId)"
+                                <button [disabled]="editId === std.stdId" (click)="onRemove(std.stdId)"
                                  mat-mini-fab color="warn">
                                     <mat-icon>delete</mat-icon>
                                 </button>
@@ -67,6 +67,10 @@
                     </tbody>
                   
                 </table>
+
+                <ng-template #noStd>
+                    <p class="alert alert-info">No Students!!!</p>
+                </ng-template>
             </div>
         </div>
     </div>
