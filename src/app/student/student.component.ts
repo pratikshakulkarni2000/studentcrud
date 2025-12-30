@@ -49,7 +49,7 @@ export class StudentComponent implements OnInit {
   ];
 
   isInEditMode: boolean = false;
-  editId : string = '';
+  editId !: string;
 
   @ViewChild('fname') fname!: ElementRef;
   @ViewChild('lname') lname!: ElementRef;
